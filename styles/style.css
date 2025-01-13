@@ -1,0 +1,207 @@
+:root {
+    font-family: 'Open Sans', Arial, sans-serif;
+    --orange: #f5900c;  /* Oransje farge brukt til bokser */
+    --bgcolor: #e1e9eb;  /* Bakgrunnsfarge til dokumentet */
+    --black: #000; /* En svart farge brukt til tekst */
+    --dark_gray: #333;  /* En mørkegrå farge brukt til tekst */
+    --light_gray: #666;  /* En lysegrå farge brukt til tekst */
+} /* Setter standarder som gjelder hele dokuementet, blant annet variabler med farger */
+
+@media (max-width: 768px) {
+    .image-container-picturebox {
+        flex-direction: column; /* Endrer layout til vertikal på små skjermer */
+        align-items: center; /* Sentrerer innholdet horisontalt */
+    }
+
+    .image-container-picturebox img {
+        width: 80%; /* Gjør bildene mindre på små skjermer */
+    }
+
+    .picturebox-text {
+        text-align: center; /* Sentrerer teksten på små skjermer */
+    }
+}  /* Denne må testes og sikkert endres på. */
+
+body {
+    background-color: var(--bgcolor);
+} /* Setter bakgrunnsfarge for nettsiden */
+
+header {
+    grid-area: header;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+} /* Plasseres i gridområdet "header", sentrerer, gjør sticky slik at den følger scrolling, og plasseres øverst med z-index */
+
+h1 {
+    font-size: 3em;
+} /* Setter skriftstørrelse */
+
+h2 {
+    font-size: 2.5em;
+} /* Setter skriftstørrelse */
+
+main {
+    grid-area: main;
+    text-align: center;
+} /* Plasseres i gridområdet "main" og sentrerer */
+
+footer {
+    grid-area: footer;
+    align-content: center;
+    text-align: center;
+    background-color: var(--orange);
+} /* Plasseres i gridområdet "footer", sentrerer og endrer bakgrunnsfarge */
+
+.container {
+    display: grid; /* Bruker grid-layout for struktur */
+    box-sizing: border-box; /* Inkluderer padding i bredde og høyde */
+    grid-template-rows: 150px auto 100px; /* Definerer høyder for rader */
+    grid-template-columns: 1fr; /* Definerer bredde for kolonne */
+    grid-template-areas: /* Definerer oppsettet til grid'en */
+    'header'
+    'main'
+    'footer';
+} /* Lager hovedgriden som hele nettsiden er basert på */
+
+.nested {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 90px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    
+} /* Lager en "nested" grid inni headeren, for å lett kunne plassere boksene til menyen der det er ønsket */
+
+.nested a {
+    padding: 0; /* Fjern padding for å unngå at teksten forskyves */
+    margin: 0; /* Unngå ekstra marginer som kan påvirke plasseringen */
+    height: 50px; /* Styrer høyden */
+    max-width: 200px;
+} /* Gjør endringer på tekst/bokser inni alle lenker i nested grid */
+
+.nested a:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.05, 1.05);
+} /* Lager skygge og effekt når du holder musen over boksen */
+
+
+a {
+    display: flex; /* Bruk Flexbox for å sentrere innholdet */
+    align-items: center; /* Sentrerer teksten vertikalt */
+    justify-content: center; /* Sentrerer teksten horisontalt */
+    text-decoration: none; /* Fjern understreking */
+    border-radius: 15px; /* Gjør boksene avrundet */
+    background-color: var(--orange); /* Oransje bakgrunn */
+    height: 40px; /* Fast høyde for boksene */
+    color: black; /* Fargen på teksten */
+} /* Endrer verdier for alle linker */
+
+
+a:visited{
+    color: var(--black);
+} /* Fjerner den lilla fargen etter du har trykket en link, alltid svart tekst */
+
+
+.image-container-main {
+    background-color: var(--bgcolor); /* Bakgrunnsfarge for bildet */
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    display: flex;
+    align-items: center; /* Sentrerer bildet vertikalt */
+    justify-content: center; /* Sentrerer bildet horisontalt */
+    margin: 0 auto; /* Sentrerer containeren */
+    padding: 0;
+} /* Lager en container for hovedbilde på nettsiden */
+
+.image-container-main img {
+    max-width: 100%; /* Gjør bildet skalerbart */
+    max-height: 100%;
+    border-radius: 30%;
+    object-fit: contain;
+} /* Endrer instillinger for hovedbilde på nettsiden */
+
+.img_main_text {
+    font-size: 2em;
+    color: var(--black);
+} /* Endrer teksten som hører til hovedbilde */
+
+.image-container-picturebox {
+    background-color: var(--bgcolor); /* Behold bakgrunnsfargen */
+    width: 60%;
+    max-width: 800px; /* Utvid bredden for å få plass til både bilde og tekst */
+    height: auto; /* La høyden tilpasses dynamisk */
+    display: flex; /* Bruk Flexbox for side-ved-side layout */
+    flex-direction: row;
+    align-items: center; /* Vertikal sentrering av bilde og tekst */
+    gap: 20px; /* Mellomrom mellom bilde og tekst */
+    margin: 20px auto; /* Sentrer containeren */
+    padding: 20px;
+    border-radius: 120px;
+} /* Lager en container for bildebokser på nettsiden */
+
+.image-container-picturebox img {
+    width: 50%;
+    max-width: 300px; /* Sett en fast bredde for bildet */
+    height: auto; /* Behold proporsjonene */
+    border-radius: 30%;
+    object-fit: cover;
+} /* Endrer instillinger for bildebokser på nettsiden */
+
+.picturebox-text {
+    flex: 1; /* La teksten bruke resten av plassen */
+    text-align: left; /* Juster teksten til venstre */
+    max-width: 500px;
+} /* Endrer den generelle teksten som hører til bildebokser */
+
+.picturebox-text h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: var(--dark_gray); /* Valgfri tekstfarge */
+} /* Endrer tittel-teksten som hører til bildebokser */
+
+.picturebox-text p {
+    margin: 10px 0 0;
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--light_gray); /* Valgfri tekstfarge */
+} /* Endrer paragraf-teksten som hører til bildebokser */
+
+#logo_img {
+    height: 200px;
+    width: 200px;
+    background-color: var(--bgcolor);
+} /* Bestemmer hvordan ikonet i headeren skal se ut. Bruker ID for dette skal bare gjelde for denne */
+
+.project_box {
+    border: 3px solid black;
+    width: 400px;
+    height: 200px;
+    transition: width 1s, height 1s;
+} /* Lager border, setter standard størrelse og lager transition effekt, som videre bestemmes av hover funksjonen under */
+
+.project_box:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    width: 550px;
+    height: 250px;
+} /* Denne funksjonen bestemmer hva som skjer når du holder musen over boksen. Skyggen som kommer og størrelsen boksen endres til */
+
+.color_line {
+    background-color: var(--orange);
+    padding: 20px;
+} /* Lager en linje med bakgrunnsfargen, brukt i about me */
+
+
+
+/* 
+
+TO DO LIST:
+- Sjekk gjennom Font og skrift generelt, kan nok gjøre det litt finere.
+- Se over farger og lag variabler, så blir farger lett like
+- Nytt ikon til både favicon og header, med transparant bakgrunn
+- Gjøre meny boksene på toppen litt mindre, vil ikke at de skal være alt for store, må funke med både pc og mobil.
+
+*/
