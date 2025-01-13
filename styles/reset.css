@@ -1,0 +1,6 @@
+/* CSS Reset */
+* {
+    margin: 0;            /* Fjern standardmarginer */
+    padding: 0;           /* Fjern standardpadding */
+    box-sizing: border-box; /* Inkluder padding og border i bredde/høyde */
+}
