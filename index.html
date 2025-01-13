@@ -1,13 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="Kristian Golin Strøm">
+    <meta name="description" content="Kristian Golin Strøms personlige porteføljeside med prosjekter, informasjon om meg og kontaktmuligheter.">
+    <meta name="keywords" content="Kristian Golin Strøm, portefølje, prosjekter, programmering, kontakt">
+    <meta name="theme-color" content="#f5900c">
+
+    <link rel="icon" href="./images/logo_2.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preload" href="./images/logo_2.png" as="image">
+
+    <title>Kristian Golin Strøm</title>
+
+    <!-- Social Media -->
+    <meta property="og:title" content="Kristian Golin Strøm - Portefølje">
+    <meta property="og:description" content="Utforsk mine prosjekter og lær mer om meg.">
+    <meta property="og:image" content="./images/social-preview.jpg">
+    <meta property="og:url" content="https://www.din-nettside.no">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
 </head>
 <body>
-    <h1>Test test test</h1>
-    <p>Hei der</p>
-    <p>Dette er en test for å sjekke commit og sånt piss</p>
+
+<div class="container" id="home"> <!-- Hele dokumentet starter her, siden grid'en er laget inni denne div'en. -->
+
+    <header>  <!-- Her starter headeren -->
+        <div class="nested">
+            <p>
+                <img src="./images/logo_2.png" alt="Logo" id="logo_img">
+            </p>
+            <p></p>
+            <p></p>
+            <a href="#home">Home</a>
+            <a href="#about_me">About me</a>
+            <a href="#projects">Projects</a>
+            <p></p>
+            <p></p>
+            <a href="mailto:kristiangolin@gmail.com" style="color: black;">Contact me here</a>
+            
+        </div>
+
+    </header> <!-- Her stopper headeren -->
+   
+   
+    <main>  <!-- Her starter hovedinnholdet til nettsiden -->
+        
+        <h1>Kristian Golin Strøm sin portefølje</h1>
+        <section class="image-container-main"> 
+            
+            <img src="./images/landscape.jpg" alt="Bilde av et fint landskap med vann, skog og fjell">
+
+        </section>
+        
+        <br><br><br><br>    <!-- Denne delen burde nok være fjernet og byttet ut med padding/margin. Brukes for å få litt luft i dokumentet -->  
+        
+    <div class="color_line">     <!-- Her starter about me seksjonen. Klassen lager bare den fargede delen bak innholdet -->
+        <section id="about_me"><br><br><br><br></section> <!-- Når det refereres til about_me, så er det her. Lagt inn line breaks slik at ser ser finere ut. Uten så er bildet heeeeelt på toppen, vil ha det litt ned. -->
+        <div class="image-container-picturebox">
+            <img src="./images/profile_picture.jpg" alt="Bilde av meg selv"> 
+            <div class="picturebox-text">
+                <h2>About me</h2>
+                <p>
+                    Mitt navn er Kristian Golin Strøm og jeg er fra Sandnes. <br>
+                    Jeg har alltid hatt en stor interesse for datamaskiner og min første stasjonære var selvbygd. 
+                    Etterhvert har dette utviklet seg til en interesse for programmering og 
+                    dypere forsatåelse av hvordan datasystemer fungerer. 
+                    Ut fra dette startet jeg prosessen med å lære meg python, HTML og CSS, 
+                    som videre skal bygges på med JavaScript for å komplettere nettsider med mer funksjonalitet.
+                </p>
+                
+            </div>
+            
+        </div>
+        <br><br><br><br>    
+    </div>   <!-- Her stopper about me seksjonen -->    
+        
+    <br><br><br><br>    <!-- Denne delen burde nok være fjernet og byttet ut med padding/margin. Brukes for å få litt luft i dokumentet -->    
+
+        <section id="projects"></section>   <!-- Her starter prosjekt delen av hovedinnholdet -->
+
+        <h1>My projects: </h1>
+
+        <div class="image-container-picturebox project_box">
+            <img src="./images/htmlcss.png" alt="HTML CSS">
+            <div class="picturebox-text">
+                <p>Tekst som hører til bildet</p>
+            </div>
+        </div>
+        <br>
+        <div class="image-container-picturebox project_box">
+            <img src="./images/python_2.png" alt="Python">
+            <div class="picturebox-text">
+                <p>Tekst som hører til bildet</p>
+            </div>
+        </div>
+        <br>
+        <div class="image-container-picturebox project_box">
+            <img src="./images/computer_2.png" alt="Computer">
+            <div class="picturebox-text">
+                <p>Tekst som hører til bildet</p>
+            </div>
+        </div>
+        <!-- Her stopper prosjekt delen av hovedinnholdet -->
+
+    </main>  
+
+
+    <footer>  <!-- Her starter footer -->
+       
+        &copy Kristian Golin Strøm. All rights reserved. HER TESTER JEG BRANCH I GITHUB
+
+    </footer>  <!-- Her stopper footer -->
+    
+</div> <!-- Slutt på dokumentet, hele dokumentet er inni div'en som stopper her, siden det er et grid system. -->
 </body>
 </html>
+
+
